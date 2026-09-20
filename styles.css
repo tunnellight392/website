@@ -426,6 +426,52 @@ h1 {
   letter-spacing: .01em;
 }
 
+/* Cards for apps that are on a store carry the tech line and the store link
+   on one row; the wrapper takes over pushing them to the bottom. */
+.card-foot {
+  margin: auto 0 0;
+  padding-top: 6px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  flex-wrap: wrap;
+}
+.card-foot .tech { margin: 0; padding-top: 0; }
+
+.store {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  text-decoration: none;
+  color: var(--accent-ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 10px;
+  background: var(--surface-2);
+  transition: border-color .16s ease, color .16s ease, background .16s ease;
+}
+.store:hover {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+}
+.store svg {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  fill: currentColor;
+  opacity: .85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store { transition: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card { transition: none; }
 }
