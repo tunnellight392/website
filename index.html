@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alex Therakathu</title>
+<meta name="description" content="Mobile developer. Six apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Alex Therakathu">
+<meta property="og:description" content="Mobile developer. Six apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to the work</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#screens">Screens</a>
+      <a href="#notes">Notes</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ─────────── Hero ─────────── -->
+  <section class="hero">
+    <p class="eyebrow">Android · iOS · Wear OS</p>
+    <h1>I build small native apps, and ship them.</h1>
+    <p class="lede">
+      Six apps across three platforms, written in Kotlin, Java and Swift. Promises exists
+      twice — once in Java on Android, once in SwiftUI on iOS — built natively for each
+      rather than wrapped in a shared shell.
+    </p>
+
+    <dl class="figures">
+      <div class="fig">
+        <dt>Apps shipped</dt>
+        <dd>6</dd>
+      </div>
+      <div class="fig">
+        <dt>Platforms</dt>
+        <dd>3</dd>
+      </div>
+      <div class="fig">
+        <dt>Languages</dt>
+        <dd>3</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ─────────── Work ─────────── -->
+  <section id="work" class="section">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p class="sec-note">Every app below is public. The repository name is the link.</p>
+    </div>
+
+    <div class="controls">
+      <div class="filters" role="group" aria-label="Filter by platform">
+        <button type="button" class="chip-btn is-on" data-filter="all" aria-pressed="true">All <span class="n">6</span></button>
+        <button type="button" class="chip-btn" data-filter="android" aria-pressed="false">Android <span class="n">4</span></button>
+        <button type="button" class="chip-btn" data-filter="ios" aria-pressed="false">iOS <span class="n">1</span></button>
+        <button type="button" class="chip-btn" data-filter="wear" aria-pressed="false">Wear OS <span class="n">1</span></button>
+      </div>
+    </div>
+
+    <ul class="grid" id="grid">
+
+      <!-- Stop Scroll -->
+      <li class="card" data-platform="android">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/stop-scroll" target="_blank" rel="noopener">
+            stop-scroll
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">Android · Kotlin</span>
+        </div>
+        <h3>Stop Scroll</h3>
+        <p class="card-desc">
+          Measures the time you actually spend scrolling a feed, rather than the time the app
+          sits open in front of you.
+        </p>
+        <ul class="feats">
+          <li>Separates active scrolling from idle time through an <code>AccessibilityService</code></li>
+          <li>Different idle rules for list feeds (Reddit, YouTube) and full-screen video (TikTok, Reels, Shorts)</li>
+          <li>Week-over-week and month-over-month comparisons, with honest clipping of partial periods</li>
+          <li>Charts drawn directly on <code>Canvas</code> — no charting dependency</li>
+        </ul>
+        <p class="tech">Kotlin · Jetpack Compose · Material 3 · Room</p>
+      </li>
+
+      <!-- Unit Converter -->
+      <li class="card" data-platform="android">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/converter-app" target="_blank" rel="noopener">
+            converter-app
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">Android · Kotlin</span>
+        </div>
+        <h3>Unit Converter</h3>
+        <p class="card-desc">
+          Twenty categories of everyday conversion. Currently at v1.2.0, with the store listing
+          and release notes kept in the repository alongside the code.
+        </p>
+        <ul class="feats">
+          <li>Length, mass, temperature, area, volume, speed, fuel economy, EV efficiency, pressure, power, pay, shoe and shirt sizing</li>
+          <li>Search matches unit names <em>and</em> symbols — <code>psi</code>, <code>mpg</code>, <code>knot</code></li>
+          <li>Long-press a row to copy it; the last value in each category is remembered</li>
+          <li>Conversion tables covered by unit tests</li>
+        </ul>
+        <p class="tech">Kotlin · Material 3 · JUnit</p>
+      </li>
+
+      <!-- Promises (Android) -->
+      <li class="card" data-platform="android">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/Bible_Promises_App" target="_blank" rel="noopener">
+            Bible_Promises_App
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">Android · Java</span>
+        </div>
+        <h3>Promises</h3>
+        <p class="card-desc">
+          A daily verse app carrying two public-domain translations, English and Malayalam.
+        </p>
+        <ul class="feats">
+          <li>Promise of the Day, browsing by topic, favourites and sharing</li>
+          <li>A daily notification at a time you pick, rescheduled across reboots</li>
+          <li>World English Bible and Malayalam <span lang="ml">സത്യവേദപുസ്തകം</span>, both public domain</li>
+          <li>Light, dark and system themes, with a built-in feedback screen</li>
+        </ul>
+        <p class="tech">Java · Android Views · AlarmManager</p>
+      </li>
+
+      <!-- Promises for iOS -->
+      <li class="card" data-platform="ios">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/promises_ios" target="_blank" rel="noopener">
+            promises_ios
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">iOS · Swift</span>
+        </div>
+        <h3>Promises for iOS</h3>
+        <p class="card-desc">
+          The same app rebuilt natively in SwiftUI — a second implementation, not a port of the
+          first.
+        </p>
+        <ul class="feats">
+          <li>Today's verse set over photography; swiping moves through the collection and changes the image</li>
+          <li>Serif or sans face, adjustable text size, and Dynamic Type honoured throughout</li>
+          <li>Favourites and notification scheduling via <code>@AppStorage</code> and observable stores</li>
+          <li>Shares its translation set with the Android build</li>
+        </ul>
+        <p class="tech">Swift · SwiftUI · UserNotifications</p>
+      </li>
+
+      <!-- Airport Terminal -->
+      <li class="card" data-platform="android">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/airport-terminal-app" target="_blank" rel="noopener">
+            airport-terminal-app
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">Android · Kotlin</span>
+        </div>
+        <h3>Airport Terminal</h3>
+        <p class="card-desc">
+          Terminal and concourse layouts for 119 airports, from Atlanta's Plane Train concourses
+          outward.
+        </p>
+        <ul class="feats">
+          <li>119 airports with terminals, concourses and gate ranges in bundled JSON</li>
+          <li>An interactive terminal map drawn on a custom <code>View</code></li>
+          <li>Links out to each airport's official map for the detail it can't carry</li>
+        </ul>
+        <p class="tech">Kotlin · Custom Canvas views · Local JSON</p>
+      </li>
+
+      <!-- Simple Data Face -->
+      <li class="card" data-platform="wear">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/simple-data-face" target="_blank" rel="noopener">
+            simple-data-face
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">Wear OS</span>
+        </div>
+        <h3>Simple Data Face</h3>
+        <p class="card-desc">
+          A Wear OS watch face built on the declarative Watch Face Format, so the system renders
+          it and the battery barely notices.
+        </p>
+        <ul class="feats">
+          <li>Seven complication slots, corner to corner</li>
+          <li>Editor options for time colour, complication colour and ring colour</li>
+          <li>An optional activity ring, and a toggle for complications in always-on</li>
+        </ul>
+        <p class="tech">Watch Face Format · Wear OS</p>
+      </li>
+
+    </ul>
+
+    <p class="empty" id="empty" hidden>Nothing matches that filter. Choose another to see the rest.</p>
+  </section>
+
+  <!-- ─────────── Screens ─────────── -->
+  <section id="screens" class="section">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">
+        Captures taken from the apps themselves — the same images that ship in the
+        repositories. Select any one to see it full size.
+      </p>
+    </div>
+
+    <div class="shots">
+      <div class="shots-head">
+        <h3>Unit Converter</h3>
+        <p>Seven screens, light and dark. Scroll sideways for the rest.</p>
+      </div>
+
+      <ul class="strip">
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-01_home.png"
+                  data-caption="Home — every category shows how many units it carries.">
+            <span class="phone">
+              <img src="assets/screens/converter-01_home.png" width="405" height="720" loading="lazy"
+                   alt="Unit Converter home screen: a grid of category tiles including Length with 10 units, Mass with 7, Temperature with 3 and Area with 9.">
+            </span>
+          </button>
+          <p class="shot-cap">Categories, each with its unit count</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-02_search.png"
+                  data-caption="Searching &ldquo;mi&rdquo; — each tile reports which of its units matched.">
+            <span class="phone">
+              <img src="assets/screens/converter-02_search.png" width="405" height="720" loading="lazy"
+                   alt="Search results for the query mi, showing Length matched on Millimeter mm, Mass on Milligram mg, Area on Square mile and Volume on Milliliter.">
+            </span>
+          </button>
+          <p class="shot-cap">Search reports the unit that matched</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-03_length.png"
+                  data-caption="100 metres resolved across every length unit at once.">
+            <span class="phone">
+              <img src="assets/screens/converter-03_length.png" width="405" height="720" loading="lazy"
+                   alt="Length conversion: 100 metres shown simultaneously as 0.1 km, 10000 cm, 100000 mm, 0.0621 miles, 109.36 yards and 328.08 feet.">
+            </span>
+          </button>
+          <p class="shot-cap">Every unit updates at once</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-04_temperature.png"
+                  data-caption="Temperature — 25&thinsp;&deg;C, 77&thinsp;&deg;F, 298.15&thinsp;K.">
+            <span class="phone">
+              <img src="assets/screens/converter-04_temperature.png" width="405" height="720" loading="lazy"
+                   alt="Temperature conversion showing 25 degrees Celsius, 77 degrees Fahrenheit and 298.15 Kelvin.">
+            </span>
+          </button>
+          <p class="shot-cap">Temperature, three ways</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-05_pay.png"
+                  data-caption="Pay works from your own hours rather than assuming a 40-hour week.">
+            <span class="phone">
+              <img src="assets/screens/converter-05_pay.png" width="405" height="720" loading="lazy"
+                   alt="Pay conversion set to 37.5 hours per week, turning 28 per hour into 4550 monthly and 54600 yearly, with a note that the figures assume a 1950-hour year.">
+            </span>
+          </button>
+          <p class="shot-cap">Pay, from hours you set yourself</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-06_shoe_size.png"
+                  data-caption="Sizing screens say plainly where the numbers are approximate.">
+            <span class="phone">
+              <img src="assets/screens/converter-06_shoe_size.png" width="405" height="720" loading="lazy"
+                   alt="Men's shoe size conversion showing US 10, UK 9.5, EU 44 and a foot length of 27.8 centimetres, above a warning that sizes are approximate and vary by brand.">
+            </span>
+          </button>
+          <p class="shot-cap">Caveats stated, not buried</p>
+        </li>
+
+        <li class="shot">
+          <button type="button" class="shot-btn"
+                  data-src="assets/screens/converter-07_decimal_places.png"
+                  data-caption="Choosing decimal places, here in the dark theme.">
+            <span class="phone">
+              <img src="assets/screens/converter-07_decimal_places.png" width="405" height="720" loading="lazy"
+                   alt="A Decimal places dialog offering Automatic or a fixed 0 to 6 places, shown over the shoe size screen in dark theme.">
+            </span>
+          </button>
+          <p class="shot-cap">Decimal places — the dark theme</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shots">
+      <div class="shots-head">
+        <h3>Simple Data Face</h3>
+        <p>The preview that ships with the watch face.</p>
+      </div>
+
+      <div class="watch-row">
+        <button type="button" class="shot-btn watch-btn"
+                data-src="assets/screens/watchface-preview.png"
+                data-caption="Simple Data Face — seven complication slots around the time.">
+          <span class="watch">
+            <img src="assets/screens/watchface-preview.png" width="480" height="480" loading="lazy"
+                 alt="A round watch face reading 3:13 PM, ringed by a green activity arc, with complications for battery, day, step count, date, heart rate and alarms.">
+          </span>
+        </button>
+        <p class="watch-note">
+          Seven complications arranged around the time — battery, day, steps, date, heart rate
+          and alarms — inside an activity ring whose colour is set in the watch face editor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── Notes ─────────── -->
+  <section id="notes" class="section">
+    <div class="sec-head">
+      <h2>Notes on the work</h2>
+      <p class="sec-note">Three things the repositories show, if you'd rather not read them.</p>
+    </div>
+
+    <ul class="notes">
+      <li>
+        <h3>The same app, written twice</h3>
+        <p>
+          Promises runs on Android in Java and on iOS in SwiftUI. Two separate implementations
+          sharing a translation set — the iOS build uses <code>@AppStorage</code>, observable
+          stores and Dynamic Type rather than reproducing the Android structure in Swift.
+        </p>
+      </li>
+      <li>
+        <h3>Drawing rather than depending</h3>
+        <p>
+          Stop Scroll's charts and Airport Terminal's maps are drawn on <code>Canvas</code> in
+          custom views. Both could have pulled in a library; drawing them directly kept the
+          binaries small and left nothing to chase when the OS moves.
+        </p>
+      </li>
+      <li>
+        <h3>Finished to the store, not the build</h3>
+        <p>
+          Unit Converter is at v1.2.0 with its Play Store listing and per-version release notes
+          versioned next to the code, conversion tables under unit tests, and a feedback screen
+          wired up in the app itself.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ─────────── Stack ─────────── -->
+  <section id="stack" class="section">
+    <div class="sec-head">
+      <h2>Tools in use</h2>
+      <p class="sec-note">Drawn from what these projects actually import.</p>
+    </div>
+
+    <div class="stack">
+      <div class="stack-col">
+        <h3>Android</h3>
+        <ul>
+          <li>Kotlin</li>
+          <li>Java</li>
+          <li>Jetpack Compose</li>
+          <li>Material 3</li>
+          <li>Room</li>
+          <li>AccessibilityService</li>
+          <li>AlarmManager</li>
+          <li>Canvas &amp; custom views</li>
+          <li>Gradle</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h3>Apple</h3>
+        <ul>
+          <li>Swift</li>
+          <li>SwiftUI</li>
+          <li>UserNotifications</li>
+          <li>AppStorage</li>
+          <li>Dynamic Type</li>
+          <li>Xcode</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h3>Wear</h3>
+        <ul>
+          <li>Wear OS</li>
+          <li>Watch Face Format</li>
+          <li>Complications API</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h3>Practice</h3>
+        <ul>
+          <li>JUnit</li>
+          <li>Instrumented tests</li>
+          <li>Light &amp; dark theming</li>
+          <li>Play Store releases</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── Contact ─────────── -->
+  <section id="contact" class="section contact">
+    <h2>Get in touch</h2>
+    <p class="contact-lede">
+      Happy to talk about Android, iOS or Wear work — or about any of the apps above.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="https://github.com/tunnellight392" target="_blank" rel="noopener">
+        github.com/tunnellight392
+      </a>
+      <a class="btn" href="mailto:tunnellightt392@gmail.com">tunnellightt392@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page — three files, no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">·</span> <span>Hosted on GitHub Pages</span></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
