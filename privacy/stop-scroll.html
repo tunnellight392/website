@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy — Stop Scroll</title>
+<meta name="description" content="Privacy policy for Stop Scroll (Android).">
+<meta name="color-scheme" content="light dark">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#screens">Screens</a>
+      <a href="../index.html#notes">Notes</a>
+      <a href="../index.html#stack">Stack</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="../privacy.html" aria-current="page">Privacy</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content" class="policy-page">
+  <a class="back" href="../privacy.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    All privacy policies
+  </a>
+
+  <header class="policy-head">
+    <p class="eyebrow">Android · Stop Scroll</p>
+    <h1>Privacy policy</h1>
+    <p class="policy-date">Effective <time>26 September 2026</time></p>
+  </header>
+
+  <article class="policy">
+<p>StopScroll ("the app") is an Android app that measures how much time you spend scrolling
+feeds in the apps you choose. This policy explains what the app records, where that
+information is kept, and what control you have over it.</p>
+<h2 class="p-h">Summary</h2>
+<ul>
+<li>StopScroll has <strong>no internet permission</strong>. It cannot send anything off your device, and
+  the developer never receives any of your data.</li>
+<li>It records <strong>when</strong> you scrolled, <strong>in which app</strong>, and <strong>how far</strong> — never the text,
+  images, videos, messages or accounts shown on your screen.</li>
+<li>Everything is stored <strong>only on your device</strong>, and you can delete it at any time.</li>
+<li>There are no accounts, ads, analytics, crash reporting or third-party SDKs.</li>
+</ul>
+<h2 class="p-h">What the app records</h2>
+<h3 class="p-sh">Scroll sessions</h3>
+<p>For each bout of scrolling in an app you have switched on, StopScroll stores:</p>
+<ul>
+<li>the app's package name (for example <code>com.instagram.android</code>)</li>
+<li>the start and end time of the bout, and the calendar day it fell on</li>
+<li>the kind of surface it happened on — a short-video feed (such as Shorts or Reels), a
+  regular feed, or elsewhere in the app</li>
+<li>how many scroll events occurred and how far the list moved, in pixels</li>
+</ul>
+<h3 class="p-sh">Settings</h3>
+<p>Your preferences are stored on the device: which apps are tracked, your daily goal,
+alert settings, how long to keep history, the colour assigned to each app in charts, and
+when the last alert was shown (so the same alert is not repeated).</p>
+<h2 class="p-h">How the app uses Android permissions</h2>
+<h3 class="p-sh">Accessibility service</h3>
+<p>StopScroll's core function relies on an Android accessibility service, which you must
+switch on yourself in system settings. It is used solely to detect scrolling in the apps
+you have chosen:</p>
+<ul>
+<li>Android delivers events to StopScroll only for the apps you have switched on.</li>
+<li>From those events the app uses which app is in front, the timing and distance of
+  scrolls, and the internal identifier (view ID) and type of the on-screen element that
+  scrolled. A view ID is a name given by the app's developer, such as <code>reel_recycler</code>; it
+  is how the app tells a Reels or Shorts feed apart from a regular feed.</li>
+<li>The app does <strong>not</strong> read, store or transmit on-screen text, images, video, content
+  descriptions, typed input, passwords, messages or account information.</li>
+<li>The service does not perform any actions on your behalf and does not change any settings.</li>
+</ul>
+<h3 class="p-sh">Usage access (optional)</h3>
+<p>If you grant usage access, StopScroll reads how long each tracked app was in the
+foreground, so it can show how much of that time was spent scrolling. This is read from
+Android when a screen needs it and is not stored by the app. StopScroll works without this
+permission.</p>
+<h3 class="p-sh">Notifications (optional)</h3>
+<p>If allowed, StopScroll shows local notifications when you reach your daily goal or have
+been scrolling continuously for a long time. These are generated on the device; no push
+service is involved.</p>
+<h3 class="p-sh">Listing installed apps</h3>
+<p>To let you choose which apps to track, StopScroll lists the apps on your device that have
+a launcher icon. This list is shown to you and is not stored, apart from the package names
+you choose to track.</p>
+<h2 class="p-h">Where your data is stored</h2>
+<p>All data is kept in the app's private storage on your device, which other apps cannot
+access. StopScroll does not request the internet permission, so it has no way to upload
+your data, and the developer does not collect, receive, sell or share any of it.</p>
+<h3 class="p-sh">Android backup</h3>
+<p>StopScroll allows Android's standard backup. If you have enabled device backup (for
+example, Google backup), Android may include the app's data in your backup and restore it
+to a new device. This backup is handled by Android and your backup provider under your
+account and their privacy terms; the developer has no access to it. You can turn device
+backup off in your phone's system settings.</p>
+<h2 class="p-h">Data retention and deletion</h2>
+<ul>
+<li><strong>Automatic deletion:</strong> in Settings you can choose to keep history for 30 days, 90 days,
+  1 year (the default) or forever. Older sessions are removed automatically.</li>
+<li><strong>Delete everything:</strong> Settings → <em>Delete all scroll history</em> permanently removes every
+  recorded session from the device.</li>
+<li><strong>Uninstalling</strong> the app removes all of its data from the device.</li>
+</ul>
+<h2 class="p-h">Children</h2>
+<p>StopScroll is not directed at children under 13 and does not knowingly collect personal
+information from anyone. Because no data leaves the device, no information about any
+user, of any age, is collected by the developer.</p>
+<h2 class="p-h">Changes to this policy</h2>
+<p>If this policy changes, the updated version will be published at the same location with a
+new effective date. Significant changes — such as the app ever gaining the ability to send
+data off the device — would be disclosed in the app before they take effect.</p>
+<h2 class="p-h">Contact</h2>
+<p>Questions about this policy can be sent to
+<a href="mailto:tunnellightt392@gmail.com">tunnellightt392@gmail.com</a>, or raised by opening an issue
+at <a href="https://github.com/tunnellight392/stop-scroll/issues">https://github.com/tunnellight392/stop-scroll/issues</a>.</p>
+  </article>
+</main>
+
+<footer class="foot">
+  <p>Questions about any of these policies: <a href="mailto:tunnellightt392@gmail.com">tunnellightt392@gmail.com</a></p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">·</span> <a href="../privacy.html">Privacy</a></p>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>

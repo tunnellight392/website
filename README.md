@@ -12,6 +12,8 @@ site, served by GitHub Pages.
 | `index.html`         | The whole page. All copy lives here.                          |
 | `styles.css`         | Design tokens at the top, then components.                    |
 | `main.js`            | Theme toggle, platform filter, screenshot lightbox.           |
+| `privacy.html`       | Lists every app, each linking to its privacy policy.          |
+| `privacy/`           | One privacy policy page per app, e.g. `privacy/stop-scroll.html`. |
 | `assets/favicon.svg` | Tab icon.                                                     |
 | `assets/screens/`    | App screenshots, downscaled to 720px tall.                    |
 | `.nojekyll`          | Tells Pages to serve the files as-is, without running Jekyll. |
@@ -49,6 +51,11 @@ only those two appear in the Screens section. To add another app:
 **Changing colours.** Every colour is a custom property declared in three places in
 `styles.css`: the base `:root` block (light), the `prefers-color-scheme: dark` block, and
 the `[data-theme="dark"]` block. Change a token in all three and it updates everywhere.
+
+**Adding a privacy policy.** Copy an existing page in `privacy/`, replace the text inside
+`<article class="policy">` and the name and date in its header, then add a matching card
+to the list in `privacy.html`. Each page's URL is stable, so it can go straight into a
+store listing.
 
 ## A note on the content
 

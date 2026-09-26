@@ -752,6 +752,94 @@ h1 {
   white-space: nowrap;
 }
 
+/* ---------- Privacy ---------- */
+.bar-nav a[aria-current] { color: var(--ink); }
+.foot a { color: inherit; }
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pcard-name {
+  margin: 0;
+  font-size: 21px;
+  font-variation-settings: "wdth" 106;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.pcard-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.pcard-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pcard-link svg { width: 14px; height: 14px; flex: none; }
+/* The whole card is the hit area for its one link. */
+.pcard { position: relative; }
+.pcard-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+
+.policy-page { max-width: calc(72ch + 2 * var(--gutter)); padding-block: 32px 72px; }
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back:hover { color: var(--ink); }
+.back svg { width: 15px; height: 15px; }
+
+.policy-head { padding-block: 36px 28px; border-bottom: 1px solid var(--line-soft); }
+.policy-head h1 { margin-bottom: 12px; }
+.policy-date { margin: 0; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+
+.policy { padding-top: 12px; color: var(--ink-2); font-size: 16px; line-height: 1.68; overflow-wrap: break-word; }
+.policy p, .policy ul, .policy ol, .policy blockquote, .policy table { margin: 0 0 16px; }
+.policy ul, .policy ol { padding-left: 22px; }
+.policy li { margin: 4px 0; }
+.policy li::marker { color: var(--accent); }
+.policy strong { color: var(--ink); }
+.policy .p-h {
+  font-size: 22px;
+  font-variation-settings: "wdth" 106;
+  margin: 36px 0 10px;
+  color: var(--ink);
+}
+.policy .p-sh { font-size: 17px; margin: 24px 0 8px; color: var(--ink); }
+.policy blockquote {
+  padding: 14px 18px;
+  background: var(--accent-wash);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+.policy blockquote p { margin: 0; }
+.policy table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.policy th, .policy td {
+  text-align: left;
+  vertical-align: top;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+}
+.policy th { background: var(--surface-2); color: var(--ink); font-weight: 600; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .grid { grid-template-columns: minmax(0, 1fr); }
