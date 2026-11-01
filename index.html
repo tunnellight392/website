@@ -42,7 +42,6 @@
     </a>
     <nav class="bar-nav" aria-label="Sections">
       <a href="#work">Work</a>
-      <a href="#screens">Screens</a>
       <a href="#notes">Notes</a>
       <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
@@ -92,7 +91,7 @@
   <section id="work" class="section">
     <div class="sec-head">
       <h2>Selected work</h2>
-      <p class="sec-note">Every app below is public. The repository name is the link; the two on Google&nbsp;Play link there as well.</p>
+      <p class="sec-note">Select any app to read how it works and see its screens. Every repository is public, and the two on Google&nbsp;Play link there directly.</p>
     </div>
 
     <div class="controls">
@@ -115,7 +114,7 @@
           </a>
           <span class="tag">Android · Kotlin</span>
         </div>
-        <h3>Stop Scroll</h3>
+        <h3><a class="card-link" href="stop-scroll.html">Stop Scroll<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           Measures the time you actually spend scrolling a feed, rather than the time the app
           sits open in front of you.
@@ -126,7 +125,9 @@
           <li>Week-over-week and month-over-month comparisons, with honest clipping of partial periods</li>
           <li>Charts drawn directly on <code>Canvas</code> — no charting dependency</li>
         </ul>
-        <p class="tech">Kotlin · Jetpack Compose · Material 3 · Room</p>
+        <div class="card-foot">
+          <p class="tech">Kotlin · Jetpack Compose · Material 3 · Room</p>
+        </div>
       </li>
 
       <!-- Unit Converter -->
@@ -138,7 +139,7 @@
           </a>
           <span class="tag">Android · Kotlin</span>
         </div>
-        <h3>Unit Converter</h3>
+        <h3><a class="card-link" href="unit-converter.html">Unit Converter<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           Twenty categories of everyday conversion. Currently at v1.2.0, with the store listing
           and release notes kept in the repository alongside the code.
@@ -168,7 +169,7 @@
           </a>
           <span class="tag">Android · Java</span>
         </div>
-        <h3>Promises</h3>
+        <h3><a class="card-link" href="promises.html">Promises<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           A daily verse app carrying two public-domain translations, English and Malayalam.
         </p>
@@ -197,18 +198,20 @@
           </a>
           <span class="tag">iOS · Swift</span>
         </div>
-        <h3>Promises for iOS</h3>
+        <h3><a class="card-link" href="promises-ios.html">Promises for iOS<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           The same app rebuilt natively in SwiftUI — a second implementation, not a port of the
           first.
         </p>
         <ul class="feats">
           <li>Today's verse set over photography; swiping moves through the collection and changes the image</li>
-          <li>Serif or sans face, adjustable text size, and Dynamic Type honoured throughout</li>
+          <li>Serif, sans-serif or monospaced type at a size you set, with Dynamic Type honoured throughout</li>
           <li>Favourites and notification scheduling via <code>@AppStorage</code> and observable stores</li>
           <li>Shares its translation set with the Android build</li>
         </ul>
-        <p class="tech">Swift · SwiftUI · UserNotifications</p>
+        <div class="card-foot">
+          <p class="tech">Swift · SwiftUI · UserNotifications</p>
+        </div>
       </li>
 
       <!-- Airport Terminal -->
@@ -220,7 +223,7 @@
           </a>
           <span class="tag">Android · Kotlin</span>
         </div>
-        <h3>Airport Terminal</h3>
+        <h3><a class="card-link" href="airport-terminal.html">Airport Terminal<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           Terminal and concourse layouts for 119 airports, from Atlanta's Plane Train concourses
           outward.
@@ -230,7 +233,9 @@
           <li>An interactive terminal map drawn on a custom <code>View</code></li>
           <li>Links out to each airport's official map for the detail it can't carry</li>
         </ul>
-        <p class="tech">Kotlin · Custom Canvas views · Local JSON</p>
+        <div class="card-foot">
+          <p class="tech">Kotlin · Custom Canvas views · Local JSON</p>
+        </div>
       </li>
 
       <!-- Simple Data Face -->
@@ -242,7 +247,7 @@
           </a>
           <span class="tag">Wear OS</span>
         </div>
-        <h3>Simple Data Face</h3>
+        <h3><a class="card-link" href="simple-data-face.html">Simple Data Face<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
         <p class="card-desc">
           A Wear OS watch face built on the declarative Watch Face Format, so the system renders
           it and the battery barely notices.
@@ -252,243 +257,14 @@
           <li>Editor options for time colour, complication colour and ring colour</li>
           <li>An optional activity ring, and a toggle for complications in always-on</li>
         </ul>
-        <p class="tech">Watch Face Format · Wear OS</p>
+        <div class="card-foot">
+          <p class="tech">Watch Face Format · Wear OS</p>
+        </div>
       </li>
 
     </ul>
 
     <p class="empty" id="empty" hidden>Nothing matches that filter. Choose another to see the rest.</p>
-  </section>
-
-  <!-- ─────────── Screens ─────────── -->
-  <section id="screens" class="section">
-    <div class="sec-head">
-      <h2>Screens</h2>
-      <p class="sec-note">
-        Captures taken from the apps themselves — the same images that ship in the
-        repositories. Select any one to see it full size.
-      </p>
-    </div>
-
-    <div class="shots">
-      <div class="shots-head">
-        <h3>Unit Converter</h3>
-        <p>Seven screens, light and dark. Scroll sideways for the rest.</p>
-      </div>
-
-      <ul class="strip">
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-01_home.png"
-                  data-caption="Home — every category shows how many units it carries.">
-            <span class="phone">
-              <img src="assets/screens/converter-01_home.png" width="405" height="720" loading="lazy"
-                   alt="Unit Converter home screen: a grid of category tiles including Length with 10 units, Mass with 7, Temperature with 3 and Area with 9.">
-            </span>
-          </button>
-          <p class="shot-cap">Categories, each with its unit count</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-02_search.png"
-                  data-caption="Searching &ldquo;mi&rdquo; — each tile reports which of its units matched.">
-            <span class="phone">
-              <img src="assets/screens/converter-02_search.png" width="405" height="720" loading="lazy"
-                   alt="Search results for the query mi, showing Length matched on Millimeter mm, Mass on Milligram mg, Area on Square mile and Volume on Milliliter.">
-            </span>
-          </button>
-          <p class="shot-cap">Search reports the unit that matched</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-03_length.png"
-                  data-caption="100 metres resolved across every length unit at once.">
-            <span class="phone">
-              <img src="assets/screens/converter-03_length.png" width="405" height="720" loading="lazy"
-                   alt="Length conversion: 100 metres shown simultaneously as 0.1 km, 10000 cm, 100000 mm, 0.0621 miles, 109.36 yards and 328.08 feet.">
-            </span>
-          </button>
-          <p class="shot-cap">Every unit updates at once</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-04_temperature.png"
-                  data-caption="Temperature — 25&thinsp;&deg;C, 77&thinsp;&deg;F, 298.15&thinsp;K.">
-            <span class="phone">
-              <img src="assets/screens/converter-04_temperature.png" width="405" height="720" loading="lazy"
-                   alt="Temperature conversion showing 25 degrees Celsius, 77 degrees Fahrenheit and 298.15 Kelvin.">
-            </span>
-          </button>
-          <p class="shot-cap">Temperature, three ways</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-05_pay.png"
-                  data-caption="Pay works from your own hours rather than assuming a 40-hour week.">
-            <span class="phone">
-              <img src="assets/screens/converter-05_pay.png" width="405" height="720" loading="lazy"
-                   alt="Pay conversion set to 37.5 hours per week, turning 28 per hour into 4550 monthly and 54600 yearly, with a note that the figures assume a 1950-hour year.">
-            </span>
-          </button>
-          <p class="shot-cap">Pay, from hours you set yourself</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-06_shoe_size.png"
-                  data-caption="Sizing screens say plainly where the numbers are approximate.">
-            <span class="phone">
-              <img src="assets/screens/converter-06_shoe_size.png" width="405" height="720" loading="lazy"
-                   alt="Men's shoe size conversion showing US 10, UK 9.5, EU 44 and a foot length of 27.8 centimetres, above a warning that sizes are approximate and vary by brand.">
-            </span>
-          </button>
-          <p class="shot-cap">Caveats stated, not buried</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/converter-07_decimal_places.png"
-                  data-caption="Choosing decimal places, here in the dark theme.">
-            <span class="phone">
-              <img src="assets/screens/converter-07_decimal_places.png" width="405" height="720" loading="lazy"
-                   alt="A Decimal places dialog offering Automatic or a fixed 0 to 6 places, shown over the shoe size screen in dark theme.">
-            </span>
-          </button>
-          <p class="shot-cap">Decimal places — the dark theme</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="shots">
-      <div class="shots-head">
-        <h3>Promises</h3>
-        <p>Eight screens, both translations. Scroll sideways for the rest.</p>
-      </div>
-
-      <ul class="strip">
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-01_today.jpg"
-                  data-caption="Promise of the Day &mdash; the verse set over photography, with the translation credited underneath.">
-            <span class="phone">
-              <img src="assets/screens/promises-01_today.jpg" width="405" height="903" loading="lazy"
-                   alt="Promise of the Day showing John 14:27 in the World English Bible over a photograph of a footbridge through forest, with Next Verse and Browse buttons.">
-            </span>
-          </button>
-          <p class="shot-cap">Promise of the Day, over photography</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-02_topics.jpg"
-                  data-caption="Verses by Topic &mdash; each tile carries its own image and the number of verses it holds.">
-            <span class="phone">
-              <img src="assets/screens/promises-02_topics.jpg" width="405" height="903" loading="lazy"
-                   alt="Verses by Topic list with a search box and image tiles for Addiction and Freedom, Anxiety and Worry, Children, Comfort and Grief and Depression, each showing a verse count.">
-            </span>
-          </button>
-          <p class="shot-cap">Topics, each with its verse count</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-03_topic_verses.jpg"
-                  data-caption="A topic opened in place &mdash; every verse it carries, with its reference.">
-            <span class="phone">
-              <img src="assets/screens/promises-03_topic_verses.jpg" width="405" height="903" loading="lazy"
-                   alt="The Anxiety and Worry topic expanded to show five verses: Philippians 4:6-7, 1 Peter 5:7, Matthew 6:34, Psalm 94:19 and Isaiah 26:3.">
-            </span>
-          </button>
-          <p class="shot-cap">Topics expand where they sit</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-04_favourites.jpg"
-                  data-caption="Favourites &mdash; saved verses gather into their own group at the top of the list.">
-            <span class="phone">
-              <img src="assets/screens/promises-04_favourites.jpg" width="405" height="903" loading="lazy"
-                   alt="The topic list with a Favorites group holding three verses pinned above Addiction and Freedom, Anxiety and Worry, Children and Comfort and Grief.">
-            </span>
-          </button>
-          <p class="shot-cap">Favourites lead the list</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-05_malayalam.jpg"
-                  data-caption="The same verse in Malayalam &mdash; <span lang=&quot;ml&quot;>സത്യവേദപുസ്തകം</span>, reference and credit line included.">
-            <span class="phone">
-              <img src="assets/screens/promises-05_malayalam.jpg" width="405" height="903" loading="lazy"
-                   alt="Promise of the Day showing John 14:27 in Malayalam from the Sathyavedapusthakam translation, over the same footbridge photograph.">
-            </span>
-          </button>
-          <p class="shot-cap">Malayalam, down to the reference</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-06_settings.png"
-                  data-caption="Settings &mdash; the daily notification, its delivery time, theme and translation.">
-            <span class="phone">
-              <img src="assets/screens/promises-06_settings.png" width="405" height="903" loading="lazy"
-                   alt="Settings screen with a daily verse notification toggle, notification time of 8:00 AM, theme set to System default, Bible version set to English and a link through to Accessibility.">
-            </span>
-          </button>
-          <p class="shot-cap">Notification, theme and translation</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-07_accessibility.png"
-                  data-caption="Accessibility &mdash; the size and face preview live above the controls that change them.">
-            <span class="phone">
-              <img src="assets/screens/promises-07_accessibility.png" width="405" height="903" loading="lazy"
-                   alt="Accessibility screen previewing the line &lsquo;The Lord is my shepherd; I shall not want.&rsquo; in serif type above a font size slider set to Medium and a font style choice of Serif, Sans-serif or Monospace.">
-            </span>
-          </button>
-          <p class="shot-cap">Text size and face, previewed live</p>
-        </li>
-
-        <li class="shot">
-          <button type="button" class="shot-btn"
-                  data-src="assets/screens/promises-08_feedback.png"
-                  data-caption="Feedback &mdash; a way to suggest a verse without leaving the app.">
-            <span class="phone">
-              <img src="assets/screens/promises-08_feedback.png" width="405" height="903" loading="lazy"
-                   alt="Feedback screen with a free text field for feedback, feature requests or new verse suggestions, above a Send Feedback button.">
-            </span>
-          </button>
-          <p class="shot-cap">Suggest a verse from inside the app</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="shots">
-      <div class="shots-head">
-        <h3>Simple Data Face</h3>
-        <p>The preview that ships with the watch face.</p>
-      </div>
-
-      <div class="watch-row">
-        <button type="button" class="shot-btn watch-btn"
-                data-src="assets/screens/watchface-preview.png"
-                data-caption="Simple Data Face — seven complication slots around the time.">
-          <span class="watch">
-            <img src="assets/screens/watchface-preview.png" width="480" height="480" loading="lazy"
-                 alt="A round watch face reading 3:13 PM, ringed by a green activity arc, with complications for battery, day, step count, date, heart rate and alarms.">
-          </span>
-        </button>
-        <p class="watch-note">
-          Seven complications arranged around the time — battery, day, steps, date, heart rate
-          and alarms — inside an activity ring whose colour is set in the watch face editor.
-        </p>
-      </div>
-    </div>
   </section>
 
   <!-- ─────────── Notes ─────────── -->

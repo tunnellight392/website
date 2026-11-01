@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Airport Terminal &mdash; Alex Therakathu</title>
+<meta name="description" content="Terminal and concourse layouts for 119 airports, from Atlanta's Plane Train concourses outward.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Airport Terminal">
+<meta property="og:description" content="Terminal and concourse layouts for 119 airports, from Atlanta's Plane Train concourses outward.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">Android &middot; Kotlin</p>
+    <h1>Airport Terminal</h1>
+    <p class="lede">Which concourse, which gate range, and how the terminals sit relative to each other &mdash; for 119 airports, held locally so it answers before the airport wifi has finished arguing with you.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/airport-terminal-app" target="_blank" rel="noopener">airport-terminal-app <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>119 airports with terminals, concourses and gate ranges in bundled JSON</li>
+      <li>An interactive terminal map drawn on a custom <code>View</code></li>
+      <li>Links out to each airport's official map for the detail it can't carry</li>
+    </ul>
+    <p class="tech">Kotlin &middot; Custom Canvas views &middot; Local JSON</p>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>119 airports, bundled</h3>
+      <p>Terminals, concourses and gate ranges ship with the app as JSON rather than being fetched. That makes it instant, and it makes it work airside on a dead connection, which is exactly where the question gets asked.</p>
+      <h3>The map is drawn, not imported</h3>
+      <p>The terminal map is rendered on a custom <code>View</code>. Shipping an image per airport would have meant 119 images to keep current and a large binary to carry them; drawing from the same structured data that answers the gate questions keeps the layout and the facts in step.</p>
+      <h3>Knowing what it can't tell you</h3>
+      <p>It does not try to be the airport's own map. For the detail a bundled layout cannot carry &mdash; which gate the lounge is behind, where the walkway is closed this month &mdash; each airport links out to its official map.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

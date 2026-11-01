@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Promises &mdash; Alex Therakathu</title>
+<meta name="description" content="A daily verse app carrying two public-domain translations, English and Malayalam.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Promises">
+<meta property="og:description" content="A daily verse app carrying two public-domain translations, English and Malayalam.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">Android &middot; Java</p>
+    <h1>Promises</h1>
+    <p class="lede">A verse a day, set over photography, with everything it quotes in the public domain &mdash; the World English Bible in English and <span lang="ml">സത്യവേദപുസ്തകം</span> in Malayalam.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/Bible_Promises_App" target="_blank" rel="noopener">Bible_Promises_App <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.tunnellight.biblepromise" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.4v17.2a1 1 0 0 0 1.52.86l14.3-8.6a1 1 0 0 0 0-1.72L6.52 2.54A1 1 0 0 0 5 3.4z"/></svg> Google&nbsp;Play</a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Promise of the Day, browsing by topic, favourites and sharing</li>
+      <li>A daily notification at a time you pick, rescheduled across reboots</li>
+      <li>World English Bible and Malayalam <span lang="ml">സത്യവേദപുസ്തകം</span>, both public domain</li>
+      <li>Light, dark and system themes, with a built-in feedback screen</li>
+    </ul>
+    <p class="tech">Java &middot; Android Views &middot; AlarmManager</p>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">Captures from the app itself. Select any one to see it full size.</p>
+    </div>
+    <ul class="gallery">
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-01_today.jpg"
+                data-caption="Promise of the Day &mdash; the verse set over photography, with the translation credited underneath.">
+          <span class="phone">
+            <img src="assets/screens/promises-01_today.jpg" width="405" height="903" loading="lazy"
+                 alt="Promise of the Day showing John 14:27 in the World English Bible over a photograph of a footbridge through forest, with Next Verse and Browse buttons.">
+          </span>
+        </button>
+        <p class="shot-cap">Promise of the Day, over photography</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-02_topics.jpg"
+                data-caption="Verses by Topic &mdash; each tile carries its own image and the number of verses it holds.">
+          <span class="phone">
+            <img src="assets/screens/promises-02_topics.jpg" width="405" height="903" loading="lazy"
+                 alt="Verses by Topic list with a search box and image tiles for Addiction and Freedom, Anxiety and Worry, Children, Comfort and Grief and Depression, each showing a verse count.">
+          </span>
+        </button>
+        <p class="shot-cap">Topics, each with its verse count</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-03_topic_verses.jpg"
+                data-caption="A topic opened in place &mdash; every verse it carries, with its reference.">
+          <span class="phone">
+            <img src="assets/screens/promises-03_topic_verses.jpg" width="405" height="903" loading="lazy"
+                 alt="The Anxiety and Worry topic expanded to show five verses: Philippians 4:6-7, 1 Peter 5:7, Matthew 6:34, Psalm 94:19 and Isaiah 26:3.">
+          </span>
+        </button>
+        <p class="shot-cap">Topics expand where they sit</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-04_favourites.jpg"
+                data-caption="Favourites &mdash; saved verses gather into their own group at the top of the list.">
+          <span class="phone">
+            <img src="assets/screens/promises-04_favourites.jpg" width="405" height="903" loading="lazy"
+                 alt="The topic list with a Favorites group holding three verses pinned above Addiction and Freedom, Anxiety and Worry, Children and Comfort and Grief.">
+          </span>
+        </button>
+        <p class="shot-cap">Favourites lead the list</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-05_malayalam.jpg"
+                data-caption="The same verse in Malayalam &mdash; <span lang=&quot;ml&quot;>സത്യവേദപുസ്തകം</span>, reference and credit line included.">
+          <span class="phone">
+            <img src="assets/screens/promises-05_malayalam.jpg" width="405" height="903" loading="lazy"
+                 alt="Promise of the Day showing John 14:27 in Malayalam from the Sathyavedapusthakam translation, over the same footbridge photograph.">
+          </span>
+        </button>
+        <p class="shot-cap">Malayalam, down to the reference</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-06_settings.png"
+                data-caption="Settings &mdash; the daily notification, its delivery time, theme and translation.">
+          <span class="phone">
+            <img src="assets/screens/promises-06_settings.png" width="405" height="903" loading="lazy"
+                 alt="Settings screen with a daily verse notification toggle, notification time of 8:00 AM, theme set to System default, Bible version set to English and a link through to Accessibility.">
+          </span>
+        </button>
+        <p class="shot-cap">Notification, theme and translation</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-07_accessibility.png"
+                data-caption="Accessibility &mdash; the size and face preview live above the controls that change them.">
+          <span class="phone">
+            <img src="assets/screens/promises-07_accessibility.png" width="405" height="903" loading="lazy"
+                 alt="Accessibility screen previewing the line &lsquo;The Lord is my shepherd; I shall not want.&rsquo; in serif type above a font size slider set to Medium and a font style choice of Serif, Sans-serif or Monospace.">
+          </span>
+        </button>
+        <p class="shot-cap">Text size and face, previewed live</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-08_feedback.png"
+                data-caption="Feedback &mdash; a way to suggest a verse without leaving the app.">
+          <span class="phone">
+            <img src="assets/screens/promises-08_feedback.png" width="405" height="903" loading="lazy"
+                 alt="Feedback screen with a free text field for feedback, feature requests or new verse suggestions, above a Send Feedback button.">
+          </span>
+        </button>
+        <p class="shot-cap">Suggest a verse from inside the app</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>The verse, and a way past it</h3>
+      <p>The Promise of the Day sits over a photograph with its reference and translation credited underneath. Next Verse moves through the collection; Browse opens the topics. The heart saves it, and the share button sends the text on.</p>
+      <h3>Topics that open where they sit</h3>
+      <p>Verses are grouped under topics &mdash; Addiction &amp; Freedom, Anxiety &amp; Worry, Children, Comfort &amp; Grief, Depression and the rest &mdash; each tile carrying its own image and the number of verses it holds, so the list tells you how much is behind it before you tap. A topic expands in place rather than pushing you onto another screen. Anything you have saved gathers into a Favorites group pinned to the top of the same list.</p>
+      <h3>Two translations, all the way down</h3>
+      <p>Switching the Bible version changes the verse, the book name and the credit line together, so the Malayalam reading is a whole screen in Malayalam rather than an English frame with the verse swapped out. Both translations are public domain: the World English Bible, and <span lang="ml">സത്യവേദപുസ്തകം</span> (Malayalam O.V.).</p>
+      <h3>Made readable</h3>
+      <p>An accessibility screen sets the verse text size and face &mdash; serif, sans-serif or monospace &mdash; and previews the result live above the controls that change it, so you are choosing by looking at the thing itself. Themes follow light, dark or the system.</p>
+      <h3>A notification you set, that survives a reboot</h3>
+      <p>The daily verse arrives at a time you choose. Scheduling goes through <code>AlarmManager</code> and is re-registered after a restart, so a reboot does not quietly end the habit.</p>
+      <h3>Suggesting a verse</h3>
+      <p>A feedback screen inside the app takes bug reports, feature requests and suggestions for verses to add, without sending anyone to an email client.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simple Data Face &mdash; Alex Therakathu</title>
+<meta name="description" content="A Wear OS watch face built on the declarative Watch Face Format, so the system renders it and the battery barely notices.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Simple Data Face">
+<meta property="og:description" content="A Wear OS watch face built on the declarative Watch Face Format, so the system renders it and the battery barely notices.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">Wear OS</p>
+    <h1>Simple Data Face</h1>
+    <p class="lede">Seven complication slots around the time, described declaratively and rendered by the system rather than by an app process that has to keep waking up.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/simple-data-face" target="_blank" rel="noopener">simple-data-face <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Seven complication slots, corner to corner</li>
+      <li>Editor options for time colour, complication colour and ring colour</li>
+      <li>An optional activity ring, and a toggle for complications in always-on</li>
+    </ul>
+    <p class="tech">Watch Face Format &middot; Wear OS</p>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">Rendered from the watch face as it runs. Select any one to see it full size.</p>
+    </div>
+    <ul class="gallery">
+      <li class="shot">
+        <button type="button" class="shot-btn watch-btn"
+                data-src="assets/screens/watchface-preview.png"
+                data-caption="Simple Data Face — seven complication slots around the time.">
+          <span class="watch">
+            <img src="assets/screens/watchface-preview.png" width="480" height="480" loading="lazy"
+                 alt="A round watch face reading 3:13 PM, ringed by a green activity arc, with complications for battery, day, step count, date, heart rate and alarms.">
+          </span>
+        </button>
+        <p class="shot-cap">Complications around the time, inside the activity ring</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn watch-btn"
+                data-src="assets/screens/watchface-02_active.png"
+                data-caption="Awake &mdash; the seconds run inline with the time.">
+          <span class="watch">
+            <img src="assets/screens/watchface-02_active.png" width="480" height="480" loading="lazy"
+                 alt="The watch face reading 6:48:55 PM with seconds, surrounded by complications showing battery at 100, Saturday, 4,750 steps, the date 13, a heart rate of 77 and no alarms.">
+          </span>
+        </button>
+        <p class="shot-cap">Seconds, while the screen is awake</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn watch-btn"
+                data-src="assets/screens/watchface-03_ambient.png"
+                data-caption="Always-on &mdash; the face dims and drops the seconds to spare the panel.">
+          <span class="watch">
+            <img src="assets/screens/watchface-03_ambient.png" width="480" height="480" loading="lazy"
+                 alt="The same watch face in always-on mode, dimmed to grey with the seconds removed, reading 07:14 with its six complications still visible.">
+          </span>
+        </button>
+        <p class="shot-cap">Always-on: dimmed, seconds dropped</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn watch-btn"
+                data-src="assets/screens/watchface-04_longpress.png"
+                data-caption="Long-press &mdash; the complication under your finger is ringed, ready to be changed.">
+          <span class="watch">
+            <img src="assets/screens/watchface-04_longpress.png" width="480" height="480" loading="lazy"
+                 alt="The watch face with the heart-rate complication highlighted inside a grey circle, as it appears when long-pressed to choose a different complication.">
+          </span>
+        </button>
+        <p class="shot-cap">Long-press highlights a complication</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>Described, not drawn</h3>
+      <p>Watch Face Format is declarative: the face is described in XML and the system renders it. There is no app process waking on a timer to repaint a canvas, which is most of why a watch face costs battery. The cost of that trade is that anything the format cannot express cannot be done at all &mdash; which for a face that shows the time and six numbers around it is no cost.</p>
+      <h3>Seven slots, corner to corner</h3>
+      <p>Battery, day, step count, date, heart rate and alarms sit above and below the time, with each slot configurable rather than fixed to the complication shown here. The ring around them is an optional activity arc, and its colour, the time colour and the complication colour are all set in the watch face editor.</p>
+      <h3>Awake, and always-on</h3>
+      <p>Awake, the time runs with seconds. In always-on the face dims and drops the seconds, and complications can be hidden entirely through a toggle &mdash; useful on OLED, where the always-on state is the one the panel spends most of its life in.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

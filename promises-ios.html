@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Promises for iOS &mdash; Alex Therakathu</title>
+<meta name="description" content="The same app rebuilt natively in SwiftUI — a second implementation, not a port of the first.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Promises for iOS">
+<meta property="og:description" content="The same app rebuilt natively in SwiftUI — a second implementation, not a port of the first.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">iOS &middot; Swift</p>
+    <h1>Promises for iOS</h1>
+    <p class="lede">Promises exists twice. This is the iOS one: written against SwiftUI's own idioms rather than reproducing the Android structure in Swift, and sharing only its translation set with the Android build.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/promises_ios" target="_blank" rel="noopener">promises_ios <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Today's verse set over photography; swipe to move through the collection, or shuffle for a different one</li>
+      <li>Eighteen topics, with saved verses gathered above them in Browse</li>
+      <li>Serif, sans-serif or monospaced type at a size you set, with Dynamic Type honoured throughout</li>
+      <li>Favourites and notification scheduling via <code>@AppStorage</code> and observable stores</li>
+      <li>Shares its translation set with the Android build; runs on iPhone and iPad</li>
+    </ul>
+    <p class="tech">Swift &middot; SwiftUI &middot; UserNotifications</p>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">Captures from the app itself. Select any one to see it full size.</p>
+    </div>
+    <ul class="gallery">
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-01_today.jpg"
+                data-caption="Promise of the Day &mdash; the verse over photography, with shuffle and browse within thumb reach.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-01_today.jpg" width="405" height="880" loading="lazy"
+                 alt="Promise of the Day on iPhone showing Matthew 11:28 in the World English Bible over a photograph of a green valley at sunrise, with heart, share and more buttons above and shuffle and browse buttons below.">
+          </span>
+        </button>
+        <p class="shot-cap">Promise of the Day, over photography</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-02_browse.jpg"
+                data-caption="Browse &mdash; saved verses sit above the eighteen topics, each topic carrying its count.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-02_browse.jpg" width="405" height="880" loading="lazy"
+                 alt="The Browse sheet listing Favorites holding 4 promises, above a Topics section with Addiction &amp; Freedom, Anxiety &amp; Worry, Children, Comfort &amp; Grief, Depression and Faith, each showing how many promises it holds, over a search field.">
+          </span>
+        </button>
+        <p class="shot-cap">Browse &mdash; favourites above the topics</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-03_topic.jpg"
+                data-caption="A topic opens on its own screen, every verse carrying its reference.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-03_topic.jpg" width="405" height="880" loading="lazy"
+                 alt="The Anxiety &amp; Worry topic listing five verses: Philippians 4:6-7, 1 Peter 5:7, Matthew 6:34, Psalm 94:19 and Isaiah 26:3, each with its reference.">
+          </span>
+        </button>
+        <p class="shot-cap">A topic, on its own screen</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-04_favorites.jpg"
+                data-caption="Favourites &mdash; the verses you kept, gathered into one list.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-04_favorites.jpg" width="405" height="880" loading="lazy"
+                 alt="The Favorites screen listing four saved verses: Romans 6:14, Philippians 4:6-7, Matthew 11:28 and 1 John 4:18.">
+          </span>
+        </button>
+        <p class="shot-cap">Favourites, kept in one place</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-05_settings.png"
+                data-caption="Settings &mdash; the daily reminder, the translation, the type and the theme.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-05_settings.png" width="405" height="880" loading="lazy"
+                 alt="The Settings sheet with a Daily Promise notification toggle, Bible Version set to English &mdash; World English Bible (WEB), Text &amp; Font set to Medium, Theme set to System, and a Send Feedback row.">
+          </span>
+        </button>
+        <p class="shot-cap">Notification, translation, theme</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-06_text_font.png"
+                data-caption="Text &amp; Font &mdash; the preview sits above the controls that change it.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-06_text_font.png" width="405" height="880" loading="lazy"
+                 alt="The Text &amp; Font screen previewing Psalm 23:1 in serif type above a text size slider set to Medium and a font choice of Serif, selected, Sans Serif or Monospace.">
+          </span>
+        </button>
+        <p class="shot-cap">Text size and face, previewed live</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/promises-ios-07_malayalam.jpg"
+                data-caption="The same app in Malayalam &mdash; <span lang=&quot;ml&quot;>സത്യവേദപുസ്തകം</span>, reference and credit included.">
+          <span class="phone">
+            <img src="assets/screens/promises-ios-07_malayalam.jpg" width="405" height="880" loading="lazy"
+                 alt="Promise of the Day showing 1 John 4:18 in Malayalam from the Sathyavedapusthakam translation, over a photograph of mountain peaks above cloud.">
+          </span>
+        </button>
+        <p class="shot-cap">Malayalam, down to the reference</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>A second implementation, not a port</h3>
+      <p>The Android build is Java over Android Views, with <code>AlarmManager</code> doing the scheduling. Rewriting that structure in Swift would have produced something that worked and felt foreign. This one is built the way SwiftUI wants: state in <code>@AppStorage</code> and observable stores, notifications through <code>UserNotifications</code>, navigation and layout left to the framework.</p>
+      <p>What the two share is the content &mdash; the same public-domain translations, the same topics, the same verses. Where the platforms differ, this build follows iOS: Browse arrives as a sheet, topics push onto their own screens, and the verse is moved through by swiping rather than by a Next button.</p>
+      <h3>Eighteen topics, and the ones you keep</h3>
+      <p>Verses are grouped under eighteen topics &mdash; Addiction &amp; Freedom, Anxiety &amp; Worry, Children, Comfort &amp; Grief, Depression, Faith, Fear, Forgiveness, Gratitude, Guidance, Healing, Hope, Loneliness, Love, Peace, Salvation, Strength and Trust &mdash; each listed with the number of promises behind it. Tapping the heart keeps a verse, and Favourites sits at the top of Browse rather than behind a separate tab.</p>
+      <p>Any promise can be shared as a ready-made picture card carrying the verse text, rather than as a bare line of copied text.</p>
+      <h3>Reading on iOS terms</h3>
+      <p>The verse can be set in a serif, sans-serif or monospaced face at a text size you choose, previewed live on the screen that sets it. <strong>Dynamic Type is honoured throughout</strong>, so the app follows the system text size a reader has already set rather than asking them to configure it a second time. Appearance follows light, dark or the system.</p>
+      <h3>Private by design</h3>
+      <p>It works offline with no account and no ads, and collects no data at all &mdash; favourites and settings stay on the device. Feedback opens the reader's own Mail app rather than sending anything from the app itself.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

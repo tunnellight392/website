@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit Converter &mdash; Alex Therakathu</title>
+<meta name="description" content="Twenty categories of everyday conversion, offline, with no ads and no tracking.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Unit Converter">
+<meta property="og:description" content="Twenty categories of everyday conversion, offline, with no ads and no tracking.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">Android &middot; Kotlin</p>
+    <h1>Unit Converter</h1>
+    <p class="lede">Pick a category, type a value, and every conversion in it updates as you type. It runs entirely on the device, so it is as fast with no signal as with one.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/converter-app" target="_blank" rel="noopener">converter-app <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.tunnellight.converter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.4v17.2a1 1 0 0 0 1.52.86l14.3-8.6a1 1 0 0 0 0-1.72L6.52 2.54A1 1 0 0 0 5 3.4z"/></svg> Google&nbsp;Play</a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Length, mass, temperature, area, volume, speed, fuel economy, EV efficiency, pressure, power, pay, shoe and shirt sizing</li>
+      <li>Search matches unit names <em>and</em> symbols &mdash; <code>psi</code>, <code>mpg</code>, <code>knot</code></li>
+      <li>Long-press a row to copy it; the last value in each category is remembered</li>
+      <li>Conversion tables covered by unit tests</li>
+    </ul>
+    <p class="tech">Kotlin &middot; Material 3 &middot; JUnit</p>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">Captures from the app itself. Select any one to see it full size.</p>
+    </div>
+    <ul class="gallery">
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-01_home.png"
+                data-caption="Home — every category shows how many units it carries.">
+          <span class="phone">
+            <img src="assets/screens/converter-01_home.png" width="405" height="720" loading="lazy"
+                 alt="Unit Converter home screen: a grid of category tiles including Length with 10 units, Mass with 7, Temperature with 3 and Area with 9.">
+          </span>
+        </button>
+        <p class="shot-cap">Categories, each with its unit count</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-02_search.png"
+                data-caption="Searching &ldquo;mi&rdquo; — each tile reports which of its units matched.">
+          <span class="phone">
+            <img src="assets/screens/converter-02_search.png" width="405" height="720" loading="lazy"
+                 alt="Search results for the query mi, showing Length matched on Millimeter mm, Mass on Milligram mg, Area on Square mile and Volume on Milliliter.">
+          </span>
+        </button>
+        <p class="shot-cap">Search reports the unit that matched</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-03_length.png"
+                data-caption="100 metres resolved across every length unit at once.">
+          <span class="phone">
+            <img src="assets/screens/converter-03_length.png" width="405" height="720" loading="lazy"
+                 alt="Length conversion: 100 metres shown simultaneously as 0.1 km, 10000 cm, 100000 mm, 0.0621 miles, 109.36 yards and 328.08 feet.">
+          </span>
+        </button>
+        <p class="shot-cap">Every unit updates at once</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-04_temperature.png"
+                data-caption="Temperature — 25&thinsp;&deg;C, 77&thinsp;&deg;F, 298.15&thinsp;K.">
+          <span class="phone">
+            <img src="assets/screens/converter-04_temperature.png" width="405" height="720" loading="lazy"
+                 alt="Temperature conversion showing 25 degrees Celsius, 77 degrees Fahrenheit and 298.15 Kelvin.">
+          </span>
+        </button>
+        <p class="shot-cap">Temperature, three ways</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-05_pay.png"
+                data-caption="Pay works from your own hours rather than assuming a 40-hour week.">
+          <span class="phone">
+            <img src="assets/screens/converter-05_pay.png" width="405" height="720" loading="lazy"
+                 alt="Pay conversion set to 37.5 hours per week, turning 28 per hour into 4550 monthly and 54600 yearly, with a note that the figures assume a 1950-hour year.">
+          </span>
+        </button>
+        <p class="shot-cap">Pay, from hours you set yourself</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-06_shoe_size.png"
+                data-caption="Sizing screens say plainly where the numbers are approximate.">
+          <span class="phone">
+            <img src="assets/screens/converter-06_shoe_size.png" width="405" height="720" loading="lazy"
+                 alt="Men's shoe size conversion showing US 10, UK 9.5, EU 44 and a foot length of 27.8 centimetres, above a warning that sizes are approximate and vary by brand.">
+          </span>
+        </button>
+        <p class="shot-cap">Caveats stated, not buried</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-07_decimal_places.png"
+                data-caption="Choosing decimal places, here in the dark theme.">
+          <span class="phone">
+            <img src="assets/screens/converter-07_decimal_places.png" width="405" height="720" loading="lazy"
+                 alt="A Decimal places dialog offering Automatic or a fixed 0 to 6 places, shown over the shoe size screen in dark theme.">
+          </span>
+        </button>
+        <p class="shot-cap">Decimal places — the dark theme</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>What it converts</h3>
+      <p>Length, mass, temperature, area, volume and speed cover most of it. Past those: fuel economy in mpg, L/100&nbsp;km and km/L, EV efficiency, time, digital storage, energy, pressure, power, angle and frequency.</p>
+      <p>Two categories are less common and were the point of building it. <strong>Pay</strong> works hourly, monthly and yearly figures out from the hours you actually work, rather than assuming a forty-hour week. <strong>Shoe and shirt sizes</strong> convert across US, UK and EU sizing for both men and women &mdash; with the caveats stated on screen rather than buried, because regional sizing genuinely is approximate.</p>
+      <h3>Search that knows symbols</h3>
+      <p>The search box matches category names and unit names, but also symbols, so <code>psi</code>, <code>mpg</code> and <code>knot</code> all find their category directly. The tile tells you which unit matched, so a hit on an abbreviation you half-remembered is still legible. Drag-to-reorder is disabled while a filter is active, so the list cannot be rearranged out from under you.</p>
+      <h3>Staying out of the way</h3>
+      <p>No sign-up, no pop-ups, no ads, no tracking, and no internet permission at all. Your last value in each category comes back when you reopen it, decimal places are configurable per category, and the categories themselves can be dragged into the order you actually use them.</p>
+      <h3>Finished to the store, not to the build</h3>
+      <p>Currently at v1.2.0. The Play Store listing and per-version release notes are versioned in the repository next to the code, the conversion tables are covered by unit tests, and a feedback screen is wired up inside the app.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

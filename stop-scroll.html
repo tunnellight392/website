@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stop Scroll &mdash; Alex Therakathu</title>
+<meta name="description" content="Measures the time you actually spend scrolling a feed, rather than the time the app sits open in front of you.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Stop Scroll">
+<meta property="og:description" content="Measures the time you actually spend scrolling a feed, rather than the time the app sits open in front of you.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">Android &middot; Kotlin</p>
+    <h1>Stop Scroll</h1>
+    <p class="lede">Screen-time tools measure time <em>in an app</em>. Stop Scroll measures time spent <em>scrolling</em>, which is a different and more useful number: forty minutes in Instagram might be five minutes of messaging and thirty-five of feed.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/stop-scroll" target="_blank" rel="noopener">stop-scroll <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Separates active scrolling from idle time through an <code>AccessibilityService</code></li>
+      <li>Different idle rules for list feeds (Reddit, YouTube) and full-screen video (TikTok, Reels, Shorts)</li>
+      <li>Week-over-week and month-over-month comparisons, with honest clipping of partial periods</li>
+      <li>Charts drawn directly on <code>Canvas</code> &mdash; no charting dependency</li>
+    </ul>
+    <p class="tech">Kotlin &middot; Jetpack Compose &middot; Material 3 &middot; Room</p>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>Two kinds of feed, two ways of measuring</h3>
+      <p><strong>List-shaped feeds</strong> &mdash; Reddit, the YouTube home feed &mdash; report their own scrolling. <code>TYPE_VIEW_SCROLLED</code> carries both the timing and the distance, and the event names the view that scrolled, so its resource id identifies the surface without walking the view tree.</p>
+      <p><strong>Full-screen video feeds</strong> report nothing at all. A dump of YouTube Shorts contains no node marked <code>scrollable="true"</code> anywhere: the pager is never exposed as an accessibility-scrollable container, so no amount of swiping emits an event. There the feed is found by its view id (<code>reel_recycler</code>) and timed by being on screen. That measures time <em>in</em> the feed rather than time with your thumb moving &mdash; which is the number you wanted anyway, since most of a Shorts session is watching. Those bouts report no scroll distance, because none was ever measured.</p>
+      <h3>Why one threshold would not do</h3>
+      <p><code>SessionTracker</code> folds the event stream into bouts, and short-video feeds get a longer idle window and more dwell credit than text feeds. One swipe on TikTok holds attention far longer than one flick on Reddit; a single threshold for both would either shred TikTok sessions into fragments or credit a Reddit glance as a full minute of scrolling.</p>
+      <p>A bout always ends at its last scroll plus the dwell credit, never at the moment the tracker noticed it had ended &mdash; so noticing late costs nothing in accuracy.</p>
+      <h3>Comparisons that don't flatter</h3>
+      <p>While a period is still running, the earlier period is clipped to the same elapsed span. A Tuesday-morning "this week" measured against a complete previous week would always show a comforting drop. Once the period is finished, both are taken whole.</p>
+      <h3>Nothing leaves the device</h3>
+      <p>The app holds <strong>no internet permission</strong>. Nothing is read from the screen &mdash; only which app scrolled, when, and how far. It all lives in a Room database on the device, with a configurable retention window and a delete-everything button.</p>
+      <h3>Drawing rather than depending</h3>
+      <p>The charts are drawn directly on <code>Canvas</code> rather than pulled from a charting library, over one palette of eight categorical slots validated as a set for colour-blind separation and stepped separately for light and dark surfaces. A package keeps the slot it was first given, so filtering a chart never repaints the series that remain, and the ninth app onwards folds into a neutral "Other" rather than being handed a generated hue.</p>
+      <p>Twenty-nine unit tests cover the timing and aggregation logic.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
