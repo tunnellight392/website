@@ -568,6 +568,8 @@ h1 {
 }
 .app-feats li { font-size: 14.8px; }
 .app-hero .tech { margin-top: 16px; }
+/* A second mono line under the stack, for a shipped app's release facts. */
+.app-hero .app-meta { margin-top: 5px; color: var(--muted); opacity: .85; }
 
 /* Prose on the detail pages */
 .prose { max-width: 68ch; }
