@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alex Therakathu</title>
-<meta name="description" content="Mobile developer. Six apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
+<meta name="description" content="Mobile developer. Seven apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
 <meta name="color-scheme" content="light dark">
 
 <meta property="og:title" content="Alex Therakathu">
-<meta property="og:description" content="Mobile developer. Six apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
+<meta property="og:description" content="Mobile developer. Seven apps across Android, iOS and Wear OS, written natively in Kotlin, Java and Swift.">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -66,15 +66,15 @@
     <p class="eyebrow">Android · iOS · Wear OS</p>
     <h1>I build small native apps, and ship them.</h1>
     <p class="lede">
-      Six apps across three platforms, written in Kotlin, Java and Swift. Promises exists
-      twice — once in Java on Android, once in SwiftUI on iOS — built natively for each
-      rather than wrapped in a shared shell.
+      Seven apps across three platforms, written in Kotlin, Java and Swift. Two of them
+      exist twice — Promises in Java on Android and SwiftUI on iOS, Unit Converter in Kotlin
+      and SwiftUI — built natively for each rather than wrapped in a shared shell.
     </p>
 
     <dl class="figures">
       <div class="fig">
         <dt>Apps shipped</dt>
-        <dd>6</dd>
+        <dd>7</dd>
       </div>
       <div class="fig">
         <dt>Platforms</dt>
@@ -96,9 +96,9 @@
 
     <div class="controls">
       <div class="filters" role="group" aria-label="Filter by platform">
-        <button type="button" class="chip-btn is-on" data-filter="all" aria-pressed="true">All <span class="n">6</span></button>
+        <button type="button" class="chip-btn is-on" data-filter="all" aria-pressed="true">All <span class="n">7</span></button>
         <button type="button" class="chip-btn" data-filter="android" aria-pressed="false">Android <span class="n">4</span></button>
-        <button type="button" class="chip-btn" data-filter="ios" aria-pressed="false">iOS <span class="n">1</span></button>
+        <button type="button" class="chip-btn" data-filter="ios" aria-pressed="false">iOS <span class="n">2</span></button>
         <button type="button" class="chip-btn" data-filter="wear" aria-pressed="false">Wear OS <span class="n">1</span></button>
       </div>
     </div>
@@ -157,6 +157,31 @@
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.4v17.2a1 1 0 0 0 1.52.86l14.3-8.6a1 1 0 0 0 0-1.72L6.52 2.54A1 1 0 0 0 5 3.4z"/></svg>
             Google&nbsp;Play
           </a>
+        </div>
+      </li>
+
+      <!-- Unit Converter for iOS -->
+      <li class="card" data-platform="ios">
+        <div class="card-top">
+          <a class="repo" href="https://github.com/tunnellight392/converter-ios" target="_blank" rel="noopener">
+            converter-ios
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="tag">iOS · Swift</span>
+        </div>
+        <h3><a class="card-link" href="converter-ios.html">Unit Converter for iOS<svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+        <p class="card-desc">
+          Twenty-one categories on iPhone and iPad, rebuilt in SwiftUI — and taken further than
+          the Android build in a few places.
+        </p>
+        <ul class="feats">
+          <li>Pin a category, or a single conversion like <code>Foot → Centimeter</code>, to the top</li>
+          <li>Value fields read arithmetic — <code>12*3</code>, <code>1½</code>, <code>5'11"</code></li>
+          <li>A Clock whose units are cities, converted on any date so daylight saving holds</li>
+          <li>Nine Swift Testing suites over the calculator, clock, locale parsing and pins</li>
+        </ul>
+        <div class="card-foot">
+          <p class="tech">Swift · SwiftUI · Observation · Swift Testing</p>
         </div>
       </li>
 
@@ -281,11 +306,13 @@
 
     <ul class="notes">
       <li>
-        <h3>The same app, written twice</h3>
+        <h3>Two apps, each written twice</h3>
         <p>
-          Promises runs on Android in Java and on iOS in SwiftUI. Two separate implementations
-          sharing a translation set — the iOS build uses <code>@AppStorage</code>, observable
-          stores and Dynamic Type rather than reproducing the Android structure in Swift.
+          Promises runs on Android in Java and on iOS in SwiftUI; Unit Converter runs on
+          Android in Kotlin and on iOS in SwiftUI. Four apps, two ideas — each pair sharing its
+          content and its conversion tables, and nothing else. The iOS builds use
+          <code>@AppStorage</code>, observable stores and Dynamic Type rather than reproducing
+          the Android structure in Swift.
         </p>
       </li>
       <li>
@@ -336,6 +363,7 @@
           <li>SwiftUI</li>
           <li>UserNotifications</li>
           <li>AppStorage</li>
+          <li>Observation</li>
           <li>Dynamic Type</li>
           <li>Xcode</li>
         </ul>
@@ -352,6 +380,7 @@
         <h3>Practice</h3>
         <ul>
           <li>JUnit</li>
+          <li>Swift Testing</li>
           <li>Instrumented tests</li>
           <li>Light &amp; dark theming</li>
           <li>Play Store releases</li>

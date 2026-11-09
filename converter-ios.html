@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit Converter for iOS &mdash; Alex Therakathu</title>
+<meta name="description" content="Unit Converter for iOS — twenty-one categories of offline conversion, pinned favourites and time zones on any date. Built natively in SwiftUI.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Unit Converter for iOS">
+<meta property="og:description" content="Unit Converter for iOS — twenty-one categories of offline conversion, pinned favourites and time zones on any date. Built natively in SwiftUI.">
+<meta property="og:type" content="article">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  /* Restore a saved theme before first paint so the page never flashes the wrong one. */
+  try {
+    var saved = localStorage.getItem("theme");
+    if (saved === "dark" || saved === "light") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#content">Skip to the content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2.5 3 21.5h18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">Alex Therakathu</span>
+    </a>
+    <nav class="bar-nav" aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#notes">Notes</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle class="t-sun" cx="12" cy="12" r="4.6" fill="currentColor"/>
+        <g class="t-rays" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/>
+        </g>
+        <path class="t-moon" d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="app-hero">
+    <a class="backlink" href="index.html#work"><svg class="go back" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the work</a>
+    <p class="eyebrow">iOS &middot; Swift</p>
+    <h1>Unit Converter for iOS</h1>
+    <p class="lede">Twenty-one categories of everyday conversion, all of them offline. Unit Converter now exists twice too: this is the iPhone and iPad build, written against SwiftUI rather than translated out of the Kotlin one, and it goes further than that build in a few places &mdash; arithmetic in the value fields, pinned conversions, and a Clock that handles daylight saving on any date you pick.</p>
+
+    <div class="app-links">
+      <a class="btn" href="https://github.com/tunnellight392/converter-ios" target="_blank" rel="noopener">converter-ios <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ul class="feats app-feats">
+      <li>Twenty-one categories &mdash; length, mass, temperature, area, volume, speed, fuel economy, EV efficiency, time, clock, digital storage, energy, pressure, power, angle, frequency, pay, and shoe and shirt sizing</li>
+      <li>Pin a whole category or a single conversion &mdash; <code>Foot &rarr; Centimeter</code> &mdash; to the top of the home screen</li>
+      <li>Type it how you say it: <code>12*3</code>, <code>1&frac12;</code>, <code>2 &frac34;</code> and <code>5'11&quot;</code> are read as arithmetic</li>
+      <li>Numbers read and written the way the device's region writes them &mdash; <code>1,5</code> or <code>1.5</code></li>
+      <li>Drag the category tiles into your own order, with VoiceOver actions offering the same move</li>
+      <li>Nine test suites over the calculator, the clock, locale number parsing, pins and share text</li>
+    </ul>
+    <p class="tech">Swift &middot; SwiftUI &middot; Observation &middot; Swift Testing</p>
+    <p class="tech app-meta">Version 1.0 &middot; iPhone and iPad &middot; Offline, no account, no ads &middot; Not yet on the App Store</p>
+  </section>
+
+  <section class="section" id="screens">
+    <div class="sec-head">
+      <h2>Screens</h2>
+      <p class="sec-note">Captures from the app itself. Select any one to see it full size.</p>
+    </div>
+    <ul class="gallery">
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-01_home.png"
+                data-caption="Home &mdash; pinned conversions and categories sit above the rest, each tile carrying its unit count.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-01_home.png" width="405" height="880" loading="lazy"
+                 alt="The Unit Converter home screen on iPhone: a Pinned section holding Foot to Centimeter, US cup to Milliliter and Fahrenheit to Celsius with worked examples, then pinned Clock and Pay tiles, then All Categories beginning with Length and Mass, over a search field.">
+          </span>
+        </button>
+        <p class="shot-cap">Pins first, then every category</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-02_length.png"
+                data-caption="Length &mdash; 5'11&quot; typed into the centimetre row, worked out underneath and spread across every other unit.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-02_length.png" width="405" height="880" loading="lazy"
+                 alt="The Length converter with 5 foot 11 typed into the Centimeter row, shown as equals 180.34 beneath it, and every other row filled in: 1.8034 metres, 0.0018034 kilometres, 1803.4 millimetres, 1.972 yards, 5.917 feet and 71 inches.">
+          </span>
+        </button>
+        <p class="shot-cap">Feet and inches, read as you wrote them</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-03_recipe.png"
+                data-caption="A pinned conversion opens with its own two units at the top, under a &ldquo;Pinned conversion&rdquo; heading.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-03_recipe.png" width="405" height="880" loading="lazy"
+                 alt="The Volume converter opened from a pin: US cup holding the mixed number 1 1/2, read as 1.5, with Milliliter directly beneath it at 354.88, then the remaining units under an Other units heading.">
+          </span>
+        </button>
+        <p class="shot-cap">Cups and fractions, for the kitchen</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-04_clock.png"
+                data-caption="Clock &mdash; cities are the units, and the date at the top decides which daylight-saving rules apply.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-04_clock.png" width="405" height="880" loading="lazy"
+                 alt="The Clock category with a note explaining that the local zone comes from the device rather than location access, a date set to Nov 8 2026, local time 19:50 in Detroit, and rows for Los Angeles, Chicago, S&atilde;o Paulo, UTC, London, Paris, Johannesburg and Moscow, the later ones marked plus one day.">
+          </span>
+        </button>
+        <p class="shot-cap">Time zones, on the date you choose</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-05_pay.png"
+                data-caption="Pay &mdash; the hours-per-week field sits above the rates it governs.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-05_pay.png" width="405" height="880" loading="lazy"
+                 alt="The Pay category noting that conversions assume a 40-hour work week, with Hours worked per week set to 40 and rates of 28 hourly, 4853.33 monthly and 58240.00 yearly.">
+          </span>
+        </button>
+        <p class="shot-cap">Pay, worked from your own hours</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-06_shoes.png"
+                data-caption="Shoe sizes come with the caveat printed on the screen, rather than left to be discovered.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-06_shoes.png" width="405" height="880" loading="lazy"
+                 alt="Men's Shoe Size showing a note that sizes are approximate and vary by brand, above US 10, UK 9.5, EU 44 and a foot length of 27.85 centimetres.">
+          </span>
+        </button>
+        <p class="shot-cap">Sizing, with its caveat stated</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-07_search.png"
+                data-caption="Searching &ldquo;psi&rdquo; &mdash; the tile names the unit that matched, not just the category.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-07_search.png" width="405" height="880" loading="lazy"
+                 alt="A search for psi leaving one tile on screen, Pressure, labelled underneath with the matching unit PSI and its symbol psi, above the open keyboard.">
+          </span>
+        </button>
+        <p class="shot-cap">Search by symbol, not only by name</p>
+      </li>
+      <li class="shot">
+        <button type="button" class="shot-btn"
+                data-src="assets/screens/converter-ios-08_dark.png"
+                data-caption="The same home screen in dark mode, drawn from the system's own grouped backgrounds.">
+          <span class="phone">
+            <img src="assets/screens/converter-ios-08_dark.png" width="405" height="880" loading="lazy"
+                 alt="The Unit Converter home screen in dark mode, showing the same pinned conversions and category tiles on a black background.">
+          </span>
+        </button>
+        <p class="shot-cap">Dark mode, from the system palette</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="prose">
+      <h3>The second converter, written for iOS</h3>
+      <p>The Android build is Kotlin over Material 3. This one takes the same twenty-odd categories and the same conversion tables and rebuilds the app around them in SwiftUI: state in <code>@Observable</code> stores, pins kept in <code>UserDefaults</code>, colours taken from the system's grouped backgrounds so the app looks like the rest of iOS in either appearance. The home grid lays out as many columns as fit &mdash; two on an iPhone, five or so on a large iPad, and a single column at accessibility text sizes, so long category names have room to grow rather than being truncated.</p>
+      <p>Writing it twice rather than once also let the second one go further. Pinned conversions, arithmetic in the value fields and the Clock's date picker are all in this build and not the first.</p>
+      <h3>Typing the way people actually type</h3>
+      <p>A value field here is not a number field. It reads <code>12*3</code>, <code>(2+3)/4</code>, <code>1 1/2</code>, <code>1&frac12;</code> and <code>5'11&quot;</code>, and shows what it worked out to on a line under the row &mdash; <code>= 36</code> &mdash; so the arithmetic is visible rather than silently applied. Numbers inside an expression are read the same locale-aware way as a plain number, so <code>1,5*2</code> is three in Germany.</p>
+      <p>The evaluator is deliberately forgiving about half-typed input: a trailing operator or an unclosed parenthesis is ignored rather than failing. That is what stops every other row blanking out in the middle of typing.</p>
+      <h3>The Clock is a converter too</h3>
+      <p>Rather than being a separate feature, world time is a category whose units are cities. Picking a date at the top rebuilds the whole category against that date, so a time converted for a day in March lands on the right side of each region's daylight-saving change. Cities can be added from every zone the device knows about.</p>
+      <p>Your own zone comes from the device's settings, and the app never asks for location &mdash; which the screen says outright, in the note above the rows, rather than leaving it to a privacy policy.</p>
+      <h3>Pins, and the order you use them in</h3>
+      <p>Both a category and an individual pair can be pinned. A pinned pair &mdash; <code>US cup &rarr; Milliliter</code> &mdash; opens the converter with those two units lifted to the top under their own heading and the rest below, so the conversion you pinned is the one you land on.</p>
+      <p>The tiles underneath drag into whatever order you use them in. On iOS&nbsp;27 that is the system's reorder container; before it, a tile is a drag source and a drop target and takes the place of the tile it is dropped on. Dragging isn't available to VoiceOver at all, so the same moves are offered there as accessibility actions &mdash; the reordering works without the gesture, not just alongside it.</p>
+      <h3>Nothing leaves the device</h3>
+      <p>There are no network requests, no analytics and no advertising SDKs &mdash; pins, saved values and settings live in the app's own storage. The in-app feedback screen opens the reader's own Mail app with the message already filled in, so nothing is sent unless they send it themselves.</p>
+      <h3>Ready for the store, not yet on it</h3>
+      <p>The App Store listing is written and versioned in the repository rather than drafted in App Store Connect: copy, keywords, the privacy policy, the age-rating answers and the upload checklist all sit in <code>docs/</code>. So does <code>render_store_assets.swift</code>, which takes raw simulator captures and renders the captioned iPhone and iPad screenshots and the promo banner from them, so the artwork can be regenerated from a single command when the screens change. The screenshots on this page are those raw captures. The build itself hasn't been submitted yet &mdash; when it is, this page gets an App Store button like its Android counterpart's Play one.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>A static page &mdash; no build step, served straight from the repository.</p>
+  <p class="foot-meta"><span>Alex Therakathu</span> <span aria-hidden="true">&middot;</span> <a href="index.html">Work</a> <span aria-hidden="true">&middot;</span> <a href="privacy.html">Privacy</a></p>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot, full size">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-cap" id="lightbox-cap"></p>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
